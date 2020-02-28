@@ -13,6 +13,8 @@ LABEL org.label-schema.schema-version="1.0" \
 
 RUN echo 'deltarpm = false' >> /etc/dnf/dnf.conf \
     && dnf update -y dnf \
-    && dnf install -y dnf-plugins-core sudo wget
+    && dnf install -y dnf-plugins-core sudo wget \
+    && dnf upgrade -y \
+    && dnf clean all
 
 CMD ["/bin/bash"]
