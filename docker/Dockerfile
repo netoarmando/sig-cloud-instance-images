@@ -17,6 +17,7 @@ RUN echo 'deltarpm = false' >> /etc/dnf/dnf.conf \
     && dnf upgrade -y \
     && dnf install -y epel-release \
     && curl https://download.docker.com/linux/centos/docker-ce.repo -o /etc/yum.repos.d/docker-ce.repo \
+    && dnf config-manager --enable PowerTools \
     && dnf clean all
 
 CMD ["/bin/bash"]
